@@ -24,7 +24,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_gauss_gauss = tiempo_gauss_gauss_final - tiempo_gauss_gauss_inicial                                              # se calcula el tiempo de ejecución del filtro gauss
         print(tiempo_gauss_gauss)                                                                                               # se imprime el tiempo de ejecución del filtro gauss
-        errorestimate_gauss_gauss = abs(lena_gauss_noisy - image_gauss_lp_gauss)                                                # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_gauss_gauss = abs((255 * lena_gauss_noisy).astype(np.uint8) - image_gauss_lp_gauss)                                                # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_gauss_gauss', errorestimate_gauss_gauss.astype(np.float)/255)                                 # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_gauss_gauss = math.sqrt(np.square(np.subtract(lena_gauss_noisy, image_gauss_lp_gauss)).mean())          # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -37,7 +37,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_gauss_median = tiempo_gauss_median_final - tiempo_gauss_median_inicial                                           # se calcula el tiempo de ejecución del filtro median
         print(tiempo_gauss_median)                                                                                              # se imprime el tiempo de ejecución del filtro median
-        errorestimate_gauss_median = abs(lena_gauss_noisy - image_median_gauss)                                                 # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_gauss_median = abs((255 * lena_gauss_noisy).astype(np.uint8) - image_median_gauss)                                                 # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_gauss_median', errorestimate_gauss_median.astype(np.float)/255)                               # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_gauss_median = math.sqrt(np.square(np.subtract(lena_gauss_noisy, image_median_gauss)).mean())           # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -50,7 +50,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_gauss_bilateral = tiempo_gauss_bilateral_final - tiempo_gauss_bilateral_inicial                                  # se calcula el tiempo de ejecución del filtro bilateral
         print(tiempo_gauss_bilateral)                                                                                           # se imprime el tiempo de ejecución del filtro bilateral
-        errorestimate_gauss_bilateral = abs(lena_gauss_noisy - image_bilateral_gauss)                                           # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_gauss_bilateral = abs((255 * lena_gauss_noisy).astype(np.uint8) - image_bilateral_gauss)                                           # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_gauss_bilateral', errorestimate_gauss_bilateral.astype(np.float)/255)                         # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_gauss_bilateral = math.sqrt(np.square(np.subtract(lena_gauss_noisy, image_bilateral_gauss)).mean())     # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -63,7 +63,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_gauss_nlm = tiempo_gauss_nlm_final - tiempo_gauss_nlm_inicial                                                    # se calcula el tiempo de ejecución del filtro nlm
         print(tiempo_gauss_nlm)                                                                                                 # se imprime el tiempo de ejecución del filtro nlm
-        errorestimate_gauss_nlm = abs(lena_gauss_noisy - image_nlm_gauss)                                                       # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_gauss_nlm = abs((255 * lena_gauss_noisy).astype(np.uint8) - image_nlm_gauss)                                                       # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_gauss_nlm', errorestimate_gauss_nlm.astype(np.float)/255)                                     # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_gauss_nlm = math.sqrt(np.square(np.subtract(lena_gauss_noisy, image_nlm_gauss)).mean())                 # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -136,7 +136,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_sip_gauss = tiempo_sip_gauss_final - tiempo_sip_gauss_inicial                                                    # se calcula el tiempo de ejecución del filtro gauss
         print(tiempo_sip_gauss)                                                                                                 # se imprime el tiempo de ejecución del filtro gauss
-        errorestimate_sip_gauss = abs(lena_sip_noisy - image_gauss_lp_sip)                                                      # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_sip_gauss = abs((255 * lena_sip_noisy).astype(np.uint8) - image_gauss_lp_sip)                                                      # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_sip_gauss',errorestimate_sip_gauss.astype(np.float) / 255)                                    # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_sip_gauss = math.sqrt(np.square(np.subtract(lena_sip_noisy, image_gauss_lp_sip)).mean())                # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -149,7 +149,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_sip_median = tiempo_sip_median_final - tiempo_sip_median_inicial                                                 # se calcula el tiempo de ejecución del filtro median
         print(tiempo_sip_median)                                                                                                # se imprime el tiempo de ejecución del filtro median
-        errorestimate_sip_median = abs(lena_sip_noisy - image_median_sip)                                                       # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_sip_median = abs((255 * lena_sip_noisy).astype(np.uint8) - image_median_sip)                                                       # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_sip_median', errorestimate_sip_median.astype(np.float) / 255)                                 # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_sip_median = math.sqrt(np.square(np.subtract(lena_sip_noisy, image_median_sip)).mean())                 # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -162,7 +162,7 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_sip_bilateral = tiempo_sip_bilateral_final - tiempo_sip_bilateral_inicial                                        # se calcula el tiempo de ejecución del filtro bilateral
         print(tiempo_sip_bilateral)                                                                                             # se imprime el tiempo de ejecución del filtro bilateral
-        errorestimate_sip_bilateral = abs(lena_sip_noisy - image_bilateral_sip)                                                 # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_sip_bilateral = abs((255 * lena_sip_noisy).astype(np.uint8) - image_bilateral_sip)                                                 # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_sip_bilateral', errorestimate_sip_bilateral.astype(np.float) / 255)                           # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_sip_bilateral = math.sqrt(np.square(np.subtract(lena_sip_noisy, image_bilateral_sip)).mean())           # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
@@ -175,13 +175,13 @@ def noise(noise_typ, image):
         cv2.waitKey(0)
         tiempo_sip_nlm = tiempo_sip_nlm_final - tiempo_sip_nlm_inicial                                                          # se calcula el tiempo de ejecución del filtro nlm
         print(tiempo_sip_nlm)                                                                                                   # se imprime el tiempo de ejecución del filtro nlm
-        errorestimate_sip_nlm = abs(lena_sip_noisy - image_nlm_sip)                                                             # se calcula el error estimado entre la imagen con ruido y la filtrada
+        errorestimate_sip_nlm = abs((255 * lena_sip_noisy).astype(np.uint8) - image_nlm_sip)                                                             # se calcula el error estimado entre la imagen con ruido y la filtrada
         cv2.imshow('errorestimado_sip_nlm', errorestimate_sip_nlm.astype(np.float) / 255)                                       # se muestra la imagen del error estimado
         cv2.waitKey(0)
         errorcuadratico_sip_nlm = math.sqrt(np.square(np.subtract(lena_sip_noisy, image_nlm_sip)).mean())                       # se calcula el sqrt del error cuadratico entre la imagen con ruido y la filtrada
         print("error cuadrático s&p_nlm", errorcuadratico_sip_nlm)                                                                                          # se imprime el valor del sqrt del error cuadratico
 
-       if tiempo_sip_gauss < (tiempo_sip_median and tiempo_sip_bilateral and tiempo_sip_nlm):                                  # se pregunta si el tiempo de ejecucion del filtro gauss fue mayor a los otros
+        if tiempo_sip_gauss < (tiempo_sip_median and tiempo_sip_bilateral and tiempo_sip_nlm):                                  # se pregunta si el tiempo de ejecucion del filtro gauss fue mayor a los otros
             timeprint = tiempo_sip_gauss * 1000                                                                                 # se pasa a milisegundos el tiempo de ejecucion del filtro gauss
             print("ruido s&p, filtro gauss", timeprint,"ms")                                                                    # se imprime el tiempo de ejecucion en ms
             timesipmedian = (tiempo_sip_median * 100)/tiempo_sip_gauss                                                          # se encuentra el porcentaje del tiempo de ejecucion del filtro median con respecto al filtro gauss
